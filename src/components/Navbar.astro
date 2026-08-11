@@ -1,0 +1,84 @@
+---
+import { portfolioData } from '../data/portfolio';
+
+const { name } = portfolioData;
+---
+
+<header class="fixed top-0 left-0 z-50 w-full px-4 py-4 md:px-8">
+  <nav class="mx-auto flex max-w-6xl items-center justify-between rounded-2xl px-6 py-3 glass">
+    <!-- Logo -->
+    <a href="#inicio" class="group flex items-center space-x-2 text-xl font-bold tracking-wider text-white">
+      <span class="text-zinc-500 group-hover:text-zinc-300 transition-colors">&lt;</span>
+      <span>{name}</span>
+      <span class="text-zinc-500 group-hover:text-zinc-300 transition-colors">/&gt;</span>
+    </a>
+
+    <!-- Desktop Nav Links -->
+    <div class="hidden items-center space-x-8 md:flex">
+      <a href="#inicio" class="text-sm font-medium text-gray-300 hover:text-white transition-colors">Inicio</a>
+      <a href="#habilidades" class="text-sm font-medium text-gray-300 hover:text-white transition-colors">Habilidades</a>
+      <a href="#proyectos" class="text-sm font-medium text-gray-300 hover:text-white transition-colors">Proyectos</a>
+      <a href="#contacto" class="text-sm font-medium text-gray-300 hover:text-white transition-colors">Contacto</a>
+      
+      <a 
+        href={`mailto:${portfolioData.email}`} 
+        class="rounded-xl border border-zinc-700 bg-black px-4 py-2 text-sm font-semibold text-white shadow-lg shadow-white/5 transition-all hover:bg-white hover:text-black hover:border-white"
+      >
+        Escríbeme
+      </a>
+    </div>
+
+    <!-- Mobile Menu Button -->
+    <button 
+      id="menu-toggle" 
+      class="flex h-10 w-10 items-center justify-center rounded-xl hover:bg-slate-800/50 text-gray-300 md:hidden"
+      aria-label="Toggle Menu"
+    >
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+      </svg>
+    </button>
+  </nav>
+
+  <!-- Mobile Dropdown Menu -->
+  <div 
+    id="mobile-menu" 
+    class="pointer-events-none mt-2 flex flex-col space-y-4 rounded-2xl p-6 opacity-0 transition-all duration-300 transform scale-95 glass md:hidden"
+  >
+    <a href="#inicio" class="mobile-nav-link text-lg font-medium text-gray-300 hover:text-white transition-colors">Inicio</a>
+    <a href="#habilidades" class="mobile-nav-link text-lg font-medium text-gray-300 hover:text-white transition-colors">Habilidades</a>
+    <a href="#proyectos" class="mobile-nav-link text-lg font-medium text-gray-300 hover:text-white transition-colors">Proyectos</a>
+    <a href="#contacto" class="mobile-nav-link text-lg font-medium text-gray-300 hover:text-white transition-colors">Contacto</a>
+    <a 
+      href={`mailto:${portfolioData.email}`} 
+      class="mobile-nav-link block w-full rounded-xl border border-zinc-700 bg-black py-3 text-center text-lg font-semibold text-white transition-all hover:bg-white hover:text-black hover:border-white"
+    >
+      Escríbeme
+    </a>
+  </div>
+</header>
+
+<script>
+  const menuToggle = document.getElementById('menu-toggle');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+
+  function toggleMenu() {
+    if (!mobileMenu) return;
+    const isClosed = mobileMenu.classList.contains('pointer-events-none');
+    
+    if (isClosed) {
+      mobileMenu.classList.remove('pointer-events-none', 'opacity-0', 'scale-95');
+      mobileMenu.classList.add('pointer-events-auto', 'opacity-100', 'scale-100');
+    } else {
+      mobileMenu.classList.add('pointer-events-none', 'opacity-0', 'scale-95');
+      mobileMenu.classList.remove('pointer-events-auto', 'opacity-100', 'scale-100');
+    }
+  }
+
+  menuToggle?.addEventListener('click', toggleMenu);
+  
+  mobileNavLinks.forEach(link => {
+    link.addEventListener('click', toggleMenu);
+  });
+</script>

@@ -1,11 +1,39 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Hero from '../components/Hero.astro';
+import Skills from '../components/Skills.astro';
+import Projects from '../components/Projects.astro';
+import Contact from '../components/Contact.astro';
+import { portfolioData } from '../data/portfolio';
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+const currentYear = new Date().getFullYear();
 ---
 
-<Layout>
-	<Welcome />
+<Layout title={`${portfolioData.name} | Portafolio Personal`} description={portfolioData.tagline}>
+	<!-- Navigation Header -->
+	<Navbar />
+
+	<!-- Main Layout Sections -->
+	<main class="flex-1">
+		<!-- Hero Area -->
+		<Hero />
+
+		<!-- Skills/Technology Stack -->
+		<Skills />
+
+		<!-- Portfolio Projects Showcase -->
+		<Projects />
+
+		<!-- Interactive Contact Details & Form -->
+		<Contact />
+	</main>
+
+	<!-- Page Footer -->
+	<footer class="border-t border-slate-900 bg-slate-950/40 py-8 text-center text-sm text-slate-500">
+		<div class="mx-auto max-w-6xl px-4 flex flex-col sm:flex-row items-center justify-between gap-4">
+			<p>© {currentYear} {portfolioData.name}. Todos los derechos reservados.</p>
+			<p>Construido con <a href="https://astro.build" target="_blank" rel="noreferrer" class="hover:text-indigo-400 font-semibold transition-colors">Astro</a> y <a href="https://tailwindcss.com" target="_blank" rel="noreferrer" class="hover:text-indigo-400 font-semibold transition-colors">Tailwind CSS</a>.</p>
+		</div>
+	</footer>
 </Layout>
