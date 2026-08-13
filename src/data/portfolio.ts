@@ -88,6 +88,14 @@ export const portfolioData: PortfolioData = {
       demoUrl: "https://example.com",
       githubUrl: "https://github.com/LeonelBackend/Clinicamente.git"
     },
+    {
+      title: "Maq-Cat",
+      description: "Aplicación móvil para visualizar información de maquinaria caterpillar.",
+      tags: ["Render", "TypeScript ", " React Native", "Astro", "Vercel", "Expo GO"],
+      image: "https://zaminechile.cl/wp-content/uploads/2020/02/PALA-HIDRAULICA-EX2000-7.jpg",
+      demoUrl: "https://example.com",
+      githubUrl: "https://github.com/LeonelBackend/Maq-Cat.git"
+    },
 
   ]
 };
