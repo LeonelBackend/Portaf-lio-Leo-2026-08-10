@@ -63,6 +63,7 @@ export const portfolioData: PortfolioData = {
     { name: "PostgreSQL", level: "Intermedio", category: "Backend" },
     { name: "MongoDB", level: "Intermedio", category: "Backend" },
     { name: "REST APIs", level: "Avanzado", category: "Backend" },
+    { name: "Sprint Boot", level: "Intermedio", category: "Backend" }
 
     // Herramientas
     { name: "Git / GitHub", level: "Avanzado", category: "Herramientas" },
