@@ -33,7 +33,7 @@ export interface PortfolioData {
 }
 
 export const portfolioData: PortfolioData = {
-  name: "Leo",
+  name: "Leonel Muñoz",
   avatar: "/leo_leo.jpeg", // Pega aquí el enlace de tu foto o el nombre del archivo en la carpeta public (ej: "/mi-foto.jpg")
   title: "Desarrollador Back-End",
   tagline: "Aprendiendo y construyendo nuevas tecnologías.",
