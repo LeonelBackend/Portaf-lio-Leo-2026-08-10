@@ -27,6 +27,7 @@ export interface PortfolioData {
   bio: string;
   email: string;
   location: string;
+  cvUrl?: string;
   socials: SocialLink[];
   skills: Skill[];
   projects: Project[];
@@ -34,12 +35,13 @@ export interface PortfolioData {
 
 export const portfolioData: PortfolioData = {
   name: "Leonel Muñoz",
-  avatar: "/leo_leo.jpeg", // Pega aquí el enlace de tu foto o el nombre del archivo en la carpeta public (ej: "/mi-foto.jpg")
+  avatar: "/leo_leo.jpeg", 
   title: "Desarrollador Back-End",
   tagline: "Aprendiendo y construyendo nuevas tecnologías.",
   bio: "Desarrollador de 29 años enfocado en el desarrollo web y móvil Back-End. Me entusiasma la tecnología, el aprendizaje constante y la creación de aplicaciones eficientes con Node.js y PostgreSQL.",
   email: "Leonelmunoz19971@gmail.com",
   location: "Lima, Perú",
+  cvUrl: "/cv-leonel-munoz.pdf", 
   socials: [
     {
       platform: "GitHub",
